@@ -1571,6 +1571,7 @@ pub fn create_window(
         create_winit_window_attributes(egui_ctx, event_loop, viewport_builder.clone());
     let window = event_loop.create_window(window_attributes)?;
     apply_viewport_builder_to_window(egui_ctx, &window, viewport_builder);
+    window.set_blur(true);
     Ok(window)
 }
 
